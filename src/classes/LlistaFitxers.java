@@ -4,7 +4,7 @@ import java.io.File;
 public class LlistaFitxers {
     public static void main(String[] args) {
         try {
-            File ruta = new File("C:/Programming");
+            File ruta = new File("/home/joan/00-tecnocampus/Projectes");
             File[] elements = ruta.listFiles();
             for (int i=0; i< elements.length; i++) {
                 if (elements[i].isDirectory()) {
