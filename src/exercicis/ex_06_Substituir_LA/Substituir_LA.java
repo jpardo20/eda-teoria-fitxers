@@ -1,7 +1,9 @@
-package ex_06_Substituir_LA;
+package exercicis.ex_06_Substituir_LA;
 
 import java.io.*;
-import Keyboard.*;
+
+import classes.Teclat;
+import classes.Teclat.*;
 
 public class Substituir_LA {
 
@@ -9,13 +11,13 @@ public class Substituir_LA {
 
        File fileIn, fileOut;
        String filename, filenameIn, filenameOut;
-       BufferedReader entrada;
-       BufferedWriter sortida;
+       BufferedReader entrada = null;
+       BufferedWriter sortida = null;
        String linia;
 
        System.out.println();
-       System.out.print("nom de l'arxiu TXT (sense extensió): ");
-       filename = Keyboard.readString();
+       System.out.print("nom de l'arxiu TXT (sense extensiÃ³): ");
+       filename = Teclat.llegirCadena();
        filenameIn = filename + ".txt";
        filenameOut = filename + "_PROC.txt";
 
@@ -29,7 +31,7 @@ public class Substituir_LA {
     }
 
     private static String processarLinia (String linia) {
-        // genera una versió de la línia en què LA ha estat substituit
+        // genera una versiï¿½ de la lï¿½nia en quï¿½ LA ha estat substituit
         // per **
 
         int pos;

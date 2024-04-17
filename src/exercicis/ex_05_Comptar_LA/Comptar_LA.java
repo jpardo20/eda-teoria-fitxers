@@ -1,37 +1,38 @@
-package ex_05_Comptar_LA;
+package exercicis.ex_05_Comptar_LA;
 
 import java.io.*;
-import Keyboard.*;
+
+import classes.Teclat;
+import classes.Teclat.*;
 
 public class Comptar_LA {
 
     public static void main (String [] args) throws IOException {
-    // en aquest exercici no caldrà capturar excepcions perquè si aquestes
-    // es produissin deixariem que fossin propagades fins a la màquina 
+    // en aquest exercici no caldrÃ  capturar excepcions perquÃ¨ si aquestes
+    // es produissin deixariem que fossin propagades fins a la mÃ quina
     // virtual.
 
        File file;
        String filename;
        BufferedReader entrada;
        String linia;
-       int aparicions;
+       int aparicions = 0;
 
        System.out.println();
-       System.out.print("nom de l'arxiu TXT (sense extensió): ");
-       filename = Keyboard.readString();
+       System.out.print("nom de l'arxiu TXT (sense extensiÃ³): ");
+       filename = Teclat.llegirCadena();
        filename = filename + ".txt";
 
 
        /* COMPLETAR */
 
-       System.out.println("la cadena LA apareix "+aparicions+" vegades");
-
+       System.out.println("la cadena LA apareix " + aparicions + " vegades");
     }
 
     private static int processarLinia (String linia) {
-        // aquest procediment compta el número de vegades que apareix 
-        // la cadena LA, en qualsevol de les seves variants, a la línia de
-        // text donada com a paràmetre
+        // aquest procediment compta el nï¿½mero de vegades que apareix 
+        // la cadena LA, en qualsevol de les seves variants, a la lï¿½nia de
+        // text donada com a parÃ metre
         int pos, resultat;
 
         linia = linia.toUpperCase();
@@ -40,8 +41,8 @@ public class Comptar_LA {
         pos = linia.indexOf("LA");
 
         /* COMPLETAR */
-        // us pot ser útil una iteració en què es fa ús del mètode
-        // indexOf en la seva versió de dos paràmetres...
+        // us pot ser ï¿½til una iteraciï¿½ en quï¿½ es fa ï¿½s del mï¿½tode
+        // indexOf en la seva versiï¿½ de dos parï¿½metres...
 
         return resultat;
     }

@@ -1,4 +1,4 @@
-package ex_07_IO_DiccionariSinonims;
+package exercicis.ex_07_IO_DiccionariSinonims;
 
 import java.util.*;
 
@@ -9,7 +9,7 @@ public class DiccioAmbMap implements DiccionariSinonims{
 
     /* constructor */
     public DiccioAmbMap () {
-        // només cal crear la infrastructura
+        // nomï¿½s cal crear la infrastructura
         this.infrastructura=new TreeMap<String, Set<String>>();
     }
 
@@ -17,14 +17,14 @@ public class DiccioAmbMap implements DiccionariSinonims{
         String pMaj = paraula.toUpperCase();
         String sMaj = sinonim.toUpperCase();
         // si la paraula existeix, en recuperem el conjunt de
-        // sinònims i provem d'afegir-hi el que ens han donat
+        // sinï¿½nims i provem d'afegir-hi el que ens han donat
         if (this.infrastructura.containsKey(pMaj)) {
             Set<String> sinonims = this.infrastructura.get(pMaj);
             return sinonims.add(sMaj);
         }
         else {
-            // si no existeix li vinculem un nou conjunt de sinònims que
-            // de moment només conté el sinònim donat
+            // si no existeix li vinculem un nou conjunt de sinï¿½nims que
+            // de moment nomï¿½s contï¿½ el sinï¿½nim donat
             Set<String> nou = new TreeSet<String>();
             this.infrastructura.put(pMaj, nou);
             return nou.add(sMaj);
@@ -32,9 +32,9 @@ public class DiccioAmbMap implements DiccionariSinonims{
     }
 
     public boolean afegir(String paraula, Set<String> sinonims) {
-        // Proveu d'implementat aquest mètode sense fer ús de l'anterior.
-        // una iteració for-each sobre el segon paràmetre us serà útil.
-        // Recordeu que la paraula (primer paràmetre) pot ser nova o no.
+        // Proveu d'implementat aquest mï¿½tode sense fer ï¿½s de l'anterior.
+        // una iteraciï¿½ for-each sobre el segon parï¿½metre us serï¿½ ï¿½til.
+        // Recordeu que la paraula (primer parï¿½metre) pot ser nova o no.
         String pMaj = paraula.toUpperCase();
         Set<String> sinonimsParaula;
         boolean resultat = false;
@@ -54,8 +54,8 @@ public class DiccioAmbMap implements DiccionariSinonims{
     public String[] recuperar(String paraula) {
         String pMaj = paraula.toUpperCase();
         String [] resultat;
-        // si la paraula hi és, recuperem el seu conjunt de sinònims i el
-        // "volquem" en una taula de nova creació
+        // si la paraula hi ï¿½s, recuperem el seu conjunt de sinï¿½nims i el
+        // "volquem" en una taula de nova creaciï¿½
         if (this.infrastructura.containsKey(pMaj)) {
             Set<String> sinonims = this.infrastructura.get(pMaj);
             resultat = new String[sinonims.size()];
@@ -66,7 +66,7 @@ public class DiccioAmbMap implements DiccionariSinonims{
             }
          }
          else {
-            // i si no hi és ens limitem a crear una taula de mida 0
+            // i si no hi ï¿½s ens limitem a crear una taula de mida 0
             resultat = new String[0];
          }
          return (resultat);

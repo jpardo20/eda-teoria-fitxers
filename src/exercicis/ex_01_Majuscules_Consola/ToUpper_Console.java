@@ -1,7 +1,7 @@
-package ex_01_Majuscules_Consola;
+package exercicis.ex_01_Majuscules_Consola;
 
 import java.io.*;
-import Keyboard.*;
+import classes.Teclat;
 
 public class ToUpper_Console {
 
@@ -12,7 +12,7 @@ public class ToUpper_Console {
         String linia;
 
         System.out.print("Nom de l'arxiu (sense extensio): ");
-        filename = Keyboard.readString();
+        filename = Teclat.llegirCadena();
         filename = filename+".txt";
 
         // vincular i obrir
@@ -29,7 +29,7 @@ public class ToUpper_Console {
         	
         }
 
-        // llegir i mostrar en majúscules
+        // llegir i mostrar en majï¿½scules
         System.out.println();
         System.out.println("--------------------------------------------------");
         try {
@@ -40,10 +40,10 @@ public class ToUpper_Console {
         	   System.out.print(linia);
         	   System.out.print(" ==> ");
         	   System.out.println(linia.toUpperCase());
-        	   // passar a la línia següent
+        	   // passar a la lï¿½nia segï¿½ent
         	   linia = entrada.readLine();
            }
-           // arxiu exhaurit. Totes les línies processades
+           // arxiu exhaurit. Totes les lï¿½nies processades
            
            entrada.close();
         }
