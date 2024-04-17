@@ -1,3 +1,5 @@
+package classes;
+
 import java.io.File;
 public class LlistaFitxers {
     public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class LlistaFitxers {
                 if (elements[i].isDirectory()) {
                     System.out.println("Directori " + elements[i].getName());
                 } else{
-                    System.out.println("Fitxer    " + elements[i].getName());
+                    System.out.println("classes.Fitxer    " + elements[i].getName());
                 }
             }
         } catch (Exception e) {
