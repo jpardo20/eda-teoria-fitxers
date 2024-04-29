@@ -1,10 +1,10 @@
-package apps;
+package exemples;
 
 import classes.Teclat;
 
 import java.io.*;
 
-public class LlegirFitxerText {
+public class Ex_03_LlegirFitxerText {
     public static void main(String[] args) throws IOException {
         File fitxerLlegir;
         BufferedReader canal = null;

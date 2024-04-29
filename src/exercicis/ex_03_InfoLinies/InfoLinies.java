@@ -2,7 +2,6 @@ package exercicis.ex_03_InfoLinies;
 
 import java.io.*;
 import javax.swing.JFileChooser;
-import classes.Fitxer;
 
 public class InfoLinies {
 

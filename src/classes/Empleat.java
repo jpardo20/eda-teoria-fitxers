@@ -1,4 +1,4 @@
-package Altres;
+package classes;
 
 public class Empleat implements Comparable<Empleat> {
 
@@ -12,7 +12,8 @@ public class Empleat implements Comparable<Empleat> {
 		this(id, "sense nom", "sense posicio", 0, 0.0);
 	}
 	
-	public Empleat (String id, String nom, String posicio, int anyIngres, double sou) {
+	public Empleat (String id, String nom,
+			String posicio, int anyIngres, double sou) {
 		this.id = id;
 		this.nom = nom;
 		this.posicio = posicio;

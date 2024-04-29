@@ -1,4 +1,4 @@
-package apps;
+package exemples;
 
 import classes.Teclat;
 
@@ -7,7 +7,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class EscriureFitxerText {
+public class Ex_02_EscriureFitxerText {
     public static void main(String[] args) throws IOException {
         final String FI = "fi";
         File fitxerSortida;
