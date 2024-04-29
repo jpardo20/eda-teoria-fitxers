@@ -1,6 +1,7 @@
 package classes;
-
 import java.io.*;
+
+// eda-06-presentacio-streams
 
 public class Teclat {
     // Canal d'entrada construït a partir

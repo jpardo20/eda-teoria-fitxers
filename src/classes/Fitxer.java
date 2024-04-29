@@ -3,6 +3,8 @@ package classes;
 import javax.swing.*;
 import java.io.File;
 
+// eda-05-presentacio-arxius-conceptes
+
 public class Fitxer {
     JFileChooser navegaFitxer;
     File fitxer;

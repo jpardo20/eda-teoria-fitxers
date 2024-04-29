@@ -2,6 +2,8 @@ package apps;
 
 import classes.Teclat;
 
+// eda-06-presentacio-streams
+
 public class TeclatApp {
     public static void main(String[] args) {
         Teclat teclat = new Teclat();
