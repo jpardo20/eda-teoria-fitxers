@@ -1,7 +1,7 @@
-package classes;
+package exemples;
 
 import java.io.File;
-public class LlistaFitxers {
+public class Ex_03_LlistaFitxers {
     public static void main(String[] args) {
         try {
             File ruta = new File("/home/joan/00-tecnocampus/Projectes");

@@ -5,7 +5,7 @@ import java.util.*;
 import javax.swing.JFileChooser;
 import classes.Empleat;
 
-public class Ex_04_Dades2Text {
+public class Ex_06_Dades2Text {
 
     public static void main (String [] args) throws IOException{
         Set<Empleat> empresa = new HashSet<Empleat>();

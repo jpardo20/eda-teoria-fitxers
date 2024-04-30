@@ -4,7 +4,7 @@ import classes.Teclat;
 
 import java.io.*;
 
-public class Ex_03_LlegirFitxerText {
+public class Ex_05_LlegirFitxerText {
     public static void main(String[] args) throws IOException {
         File fitxerLlegir;
         BufferedReader canal = null;
