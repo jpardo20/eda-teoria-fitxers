@@ -1,15 +1,14 @@
 package exemples;
+// eda-05-presentacio-arxius-conceptes
 
 import javax.swing.*;
 import java.io.File;
 
-// eda-05-presentacio-arxius-conceptes
-
 public class Ex_01_Fitxer {
-    JFileChooser navegaFitxer;
-    File fitxer;
+    public static void main(String[] args) {
+        JFileChooser navegaFitxer;
+        File fitxer;
 
-    public Ex_01_Fitxer() {
         navegaFitxer = new JFileChooser();
         navegaFitxer.setFileSelectionMode(
                 JFileChooser.FILES_AND_DIRECTORIES);
@@ -32,9 +31,5 @@ public class Ex_01_Fitxer {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new Ex_01_Fitxer();
     }
 }
