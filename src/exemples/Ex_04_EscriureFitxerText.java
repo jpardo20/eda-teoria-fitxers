@@ -7,7 +7,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Ex_02_EscriureFitxerText {
+public class Ex_04_EscriureFitxerText {
     public static void main(String[] args) throws IOException {
         final String FI = "fi";
         File fitxerSortida;

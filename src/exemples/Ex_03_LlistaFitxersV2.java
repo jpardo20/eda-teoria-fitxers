@@ -3,7 +3,7 @@ package exemples;
 import java.io.File;
 import java.util.Scanner;
 
-public class Ex_04_LlistaFitxersV2 {
+public class Ex_03_LlistaFitxersV2 {
         public static void explorarDirectori(File directoriAMostrar, int nivell) {
             if (directoriAMostrar.isDirectory()) {
                 System.out.println(getCadNivell(nivell + 1) +
