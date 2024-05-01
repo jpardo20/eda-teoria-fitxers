@@ -26,7 +26,7 @@ public class Ex_06_Dades2Text {
         fitxerSortida = escullFitxer.getSelectedFile();
 
         if (fitxerSortida==null) {
-            System.out.println("\nNo s'ha seleccinat cap fitxer!");
+            System.out.println("\nNo s'ha seleccionat cap fitxer!");
             System.exit(1);
         }
 
