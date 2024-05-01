@@ -55,4 +55,3 @@ public class Ex_07_Text2Dades {
         }
     }
 }
-

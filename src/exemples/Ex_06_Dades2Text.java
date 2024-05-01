@@ -36,10 +36,10 @@ public class Ex_06_Dades2Text {
         // Integer.toString, Double.toString i newLine
         for (Empleat e : empresa) {
             bwCanal.write(e.getId()); bwCanal.newLine();
-            bwCanal.write(e.getNom()); bwCanal.newLine();
-            bwCanal.write(e.getPosicio()); bwCanal.newLine();
-            bwCanal.write(Integer.toString(e.getAnyIngres())); bwCanal.newLine();
-            bwCanal.write(Double.toString(e.getSou())); bwCanal.newLine();
+            bwCanal.write(e.getNom() + "\n");
+            bwCanal.write(e.getPosicio() + "\n");
+            bwCanal.write(Integer.toString(e.getAnyIngres()) + "\n");
+            bwCanal.write(Double.toString(e.getSou()) + "\n");
         }
         // tancar canal
         bwCanal.close();

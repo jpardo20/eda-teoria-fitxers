@@ -25,7 +25,7 @@ public class Teclat {
         }
     }
     // Mètode per llegir un enter de mida int
-    public int llegirEnter() {
+    public static int llegirEnter() {
         try {
             String cadena = canal.readLine();
             // Llegir una línia del canal
@@ -33,6 +33,22 @@ public class Teclat {
                 return llegirEnter();   // insistir
             else
                 return Integer.parseInt(cadena); // convertir a int
+        } catch (IOException e) { // si a la lectura ha anat malament
+            // o ha fallat la conversió
+            System.out.printf(e.getMessage()); // mostrar excepció
+            System.exit(0); // aturar la màquina virtual
+            return(0); // Línia de codi inaccessible
+        }
+    }
+    // Mètode per llegir un enter de mida double
+    public static double llegirDouble() {
+        try {
+            String cadena = canal.readLine();
+            // Llegir una línia del canal
+            if (cadena.length() == 0)   // si la línia és buida
+                return llegirEnter();   // insistir
+            else
+                return Double.parseDouble(cadena); // convertir a int
         } catch (IOException e) { // si a la lectura ha anat malament
             // o ha fallat la conversió
             System.out.printf(e.getMessage()); // mostrar excepció
