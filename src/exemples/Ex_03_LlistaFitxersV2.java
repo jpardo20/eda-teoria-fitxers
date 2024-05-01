@@ -4,7 +4,8 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Ex_03_LlistaFitxersV2 {
-        public static void explorarDirectori(File directoriAMostrar, int nivell) {
+        public static void explorarDirectori(File directoriAMostrar,
+                                     int nivell) {
             if (directoriAMostrar.isDirectory()) {
                 System.out.println(getCadNivell(nivell + 1) +
                         "d: " + directoriAMostrar.getName());
@@ -29,10 +30,12 @@ public class Ex_03_LlistaFitxersV2 {
     }
     public static void main(String[] args) {
         Scanner teclat = new Scanner(System.in);
-        System.out.print("Entra la ruta del directori a explorar: ");
+        System.out.print("Entra la ruta del " +
+                "directori a explorar: ");
         String ruta = teclat.nextLine();
         File directori = new File(ruta);
-        System.out.format("\nMostrar els elements del directori %s\n", directori);
+        System.out.format("\nMostrar els elements" +
+                "del directori %s\n", directori);
         explorarDirectori(directori,0);
     }
 }
