@@ -10,7 +10,8 @@ public class Ex_01_Fitxer {
         File fitxer;
 
         navegaFitxer = new JFileChooser();
-        navegaFitxer.setDialogTitle("Selecciona el fitxer per veure els detalls!");
+        navegaFitxer.setDialogTitle("Selecciona" +
+                " el fitxer per veure els detalls!");
         navegaFitxer.setFileSelectionMode(
                 JFileChooser.FILES_AND_DIRECTORIES);
         navegaFitxer.showOpenDialog(null);

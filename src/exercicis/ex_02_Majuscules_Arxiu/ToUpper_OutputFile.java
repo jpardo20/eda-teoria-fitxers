@@ -27,7 +27,7 @@ public class    ToUpper_OutputFile {
         	sortida = new BufferedWriter(new FileWriter(outputFile));
         }
         catch(IOException ex) {
-        	System.err.println("Problemes en la creaci� dels canals");
+            System.err.println("Problemes en la creació dels canals");
         	ex.printStackTrace();
         	System.exit(0);
         }

@@ -39,7 +39,7 @@ public class Censurar {
 		while(liniaLlegida!=null) {
 			if (!liniaLlegida.contains("CENSURAR")) {
 				//System.out.printf("linia = " + liniaLlegida + "\n");
-				buw.write(liniaLlegida);
+				buw.write(liniaLlegida + "\n");
 			} else
 				System.out.format("\t%s\n",liniaLlegida);
 				// System.out.println("\t" + liniaLlegida);
