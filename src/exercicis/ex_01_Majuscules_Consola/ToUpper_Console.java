@@ -32,21 +32,30 @@ public class ToUpper_Console {
         System.out.println("--------------------------------------------------");
         try {
            /* COMPLETAR */
-            do{
+            // Versió amb un MENTRE (habitual)
+            linia = entrada.readLine();
+            while(linia!=null){
+                System.out.print(linia);
+                System.out.print(" ==> ");
+                System.out.println(linia.toUpperCase());
+                // passar a la línia següent
                 linia = entrada.readLine();
-                // processar linia
-                if (linia!=null){
-                    if(linia == "")
-                        System.out.printf("------------------");
-                    else{
-                        System.out.print(linia);
-                        System.out.print(" ==> ");
-                        System.out.println(linia.toUpperCase());
-                    }
-                }
-
-                // passar a la l�nia seg�ent
-            } while(linia!=null);
+            }
+            // Versió amb un REPETIR
+//            do{
+//                linia = entrada.readLine();
+//                // processar linia
+//                if (linia!=null){
+//                    if(linia == "")
+//                        System.out.printf("------------------");
+//                    else{
+//                        System.out.print(linia);
+//                        System.out.print(" ==> ");
+//                        System.out.println(linia.toUpperCase());
+//                    }
+//                }
+//                // passar a la l�nia seg�ent
+//            } while(linia!=null);
             // arxiu exhaurit. Totes les l�nies processades
            
            entrada.close();

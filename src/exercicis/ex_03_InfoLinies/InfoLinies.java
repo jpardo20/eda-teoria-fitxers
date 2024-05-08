@@ -11,11 +11,11 @@ public class InfoLinies {
 		JFileChooser fileChooser = new JFileChooser(".");
 		File arxiu;
 		float mitjana = 0f;
-		float comptaLinies = 0f;
+		int comptaLinies = 0;
 		float mida = 0, suma = 0f;
+
 		String linia;
 		BufferedReader entrada = null;
-
 
 		fileChooser.setDialogTitle("Seleccionar arxiu");
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -36,22 +36,29 @@ public class InfoLinies {
 		while(linia!=null) {
 			comptaLinies ++;
 			mida = linia.length();
-			System.out.format("Línia %.0f:" +
+			suma += mida;
+			System.out.format("Línia %d:" +
 					" %s mida => %.0f\n",
 					comptaLinies,
 					linia,
 					mida
 					);
-			suma += mida;
+
 			linia = entrada.readLine();
 		}
-		System.out.format("L'arxiu %s té %.0f línies\n",
+
+		System.out.format("L'arxiu %s té %d línies\n",
 				arxiu.getName(),
 				comptaLinies);
-		mitjana = suma/comptaLinies;
-		System.out.format("La mida mitjana de les" +
-						"línies és %.2f caràcters\n",
-				mitjana);
+
+		if(comptaLinies==0) {
+			System.out.print("Amb zero línies no es pot calcular cap mitjana");
+		} else {
+			mitjana = suma / comptaLinies;
+			System.out.format("La mida mitjana de les" +
+							"línies és %.2f caràcters\n",
+					mitjana);
+		}
 	}
 
 }
