@@ -23,9 +23,9 @@ public class Censurar {
 		/* COMPLETE */
 		try {
 			bur = new BufferedReader(
-			new FileReader(arxiuEntrada));
+				new FileReader(arxiuEntrada));
 			buw = new BufferedWriter(
-			new FileWriter(arxiuSortida));
+				new FileWriter(arxiuSortida));
 		}
 		catch(IOException ex) {
 			System.err.println("Problemes en la" +
@@ -37,13 +37,12 @@ public class Censurar {
 		liniaLlegida = bur.readLine();
 
 		while(liniaLlegida!=null) {
-			if (!liniaLlegida.contains("CENSURAR")) {
-				//System.out.printf("linia = " + liniaLlegida + "\n");
+			if (!liniaLlegida.startsWith("CENSURAR ")) {
 				buw.write(liniaLlegida + "\n");
+//				buw.write(liniaLlegida); buw.newLine();
 			} else
 				System.out.format("\t%s\n",liniaLlegida);
 				// System.out.println("\t" + liniaLlegida);
-
 			liniaLlegida = bur.readLine();
 		}
 
