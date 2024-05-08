@@ -14,10 +14,10 @@ public class    ToUpper_OutputFile {
         BufferedWriter sortida = null;
         String linia;
 
-        System.out.print("Nom de l'arxiu (sense extensio): ");
+        System.out.print("Nom de l'arxiu (sense extensió): ");
         filename = Teclat.llegirCadena();
 
-        // vincular i obrir tant l'entrada com la sortida
+        // Vincular i obrir tant l'entrada com la sortida
         inputFile = new File(filename+".txt");
         outputFile = new File(filename+"_UPPER.txt");
 
@@ -25,21 +25,22 @@ public class    ToUpper_OutputFile {
         try {
         	entrada = new BufferedReader(new FileReader(inputFile));
         	sortida = new BufferedWriter(new FileWriter(outputFile));
-        }
-        catch(IOException ex) {
-            System.err.println("Problemes en la creació dels canals");
-        	ex.printStackTrace();
+        } catch(FileNotFoundException exFitNoTrobat) {
+            System.err.format("No s'ha trobat l'arxiu %s!",inputFile.getName());
         	System.exit(0);
+        } catch(IOException ioEx) {
+            System.err.println("Problemes amb algun dels arxius!");
+            ioEx.printStackTrace();
+            System.exit(0);
         }
 
         // llegir en un i escriure en l'altre
         try {
            /* COMPLETAR */
         	linia = entrada.readLine();
-        	while(linia!=null) {
+        	while(linia != null) {
         		sortida.write(linia.toUpperCase());
         		sortida.newLine();
-        		System.out.println(linia);
         		linia = entrada.readLine();
         	}
         	entrada.close();
@@ -52,6 +53,6 @@ public class    ToUpper_OutputFile {
         	ex.printStackTrace();
         	System.exit(0);
         }
-        System.out.println(">>>Arxiu processat. Resultat a "+outputFile.getName());
+        System.out.println(">>>Arxiu processat. Resultat a " + outputFile.getName());
     }
 }

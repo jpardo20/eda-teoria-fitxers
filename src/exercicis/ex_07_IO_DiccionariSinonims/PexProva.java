@@ -6,36 +6,36 @@ import java.io.*;
 
 public class PexProva {
 
-  // opcions del men� que es presentar� a l'usuari del programet
+  // Opcions del menú que es presentarà a l'usuari del programa
   private static final int FINAL = 0;
   private static final int BUSCAR = 1;
   private static final int AFEGIR= 2;
   private static final int AFEGIR_CJT = 3;
   private static final int LLISTAR = 4;
 
-  // els tres formats de c�rrega/desc�rrega
+  // els tres formats de càrrega/descàrrega
   private static final int TEXT = 0; // format de text
-  private static final int BIN_NUM = 1; // format binari amb numero de sin�nims
+  private static final int BIN_NUM = 1; // format binari amb numero de sinònims
   private static final int BIN_MAR = 2; // format binari amb marca
 
   // canviar el valor d'aquests atribut per a canviar
-  // el format de c�rrega/descarrega
-  private static int modeCarrega = BIN_NUM;
-  private static int modeDescarrega = BIN_NUM;
+  // el format d e càrrega/descarrega
+  private static int modeCarrega = TEXT;
+  private static int modeDescarrega = TEXT;
 
   private static DiccioAmbMap elMeuDiccionari;
 
   public static void main (String [] args) {
 
-    int opcio; // opci� del men�i triada
+    int opcio; // opció del menúi triada
 
     // crear el diccionari
     elMeuDiccionari = new DiccioAmbMap();
 
-    // donem l'opci� de carregar el diccionari
+    // donem l'opció de carregar el diccionari
     carregarDiccionari(elMeuDiccionari);
 
-    // iterar mentre l'opci� seleccionada no sigui la d'abandonar el programa
+    // iterar mentre l'opció seleccionada no sigui la d'abandonar el programa
     opcio = menu();
     while (opcio!=FINAL)  {
       // processar l'opcio seleccionada
@@ -48,25 +48,25 @@ public class PexProva {
       opcio = menu();
     }
 
-    // donem l'opci� de descarregar el diccionari
+    // donem l'opció de descarregar el diccionari
     descarregarDiccionari(elMeuDiccionari);
   } // final de main
 
-  // procediment que presenta el men� i llegeix (i retorna) l'opci� escollida
+  // procediment que presenta el menú i llegeix (i retorna) l'opció escollida
   private static int menu ()  {
 
     System.out.println("(0) FINALITZAR");
-    System.out.println("(1) BUSCAR ELS SIN�NIMS D'UNA PARAULA");
-    System.out.println("(2) AFEGIR UN SIN�NIM A UNA PARAULA");
+    System.out.println("(1) BUSCAR ELS SINÒNIMS D'UNA PARAULA");
+    System.out.println("(2) AFEGIR UN SINôNIM A UNA PARAULA");
     System.out.println("(3) AFEGIR UN CONJUNT DE SINONIMS A UNA PARAULA");
     System.out.println("(4) LLISTAR TOTES LES PARAULES");
     System.out.println();
 
-    // iterar mentre l'opci� no sigui una de les permeses
-    String cadOpcio; // l'opci�, tal i com la llegim
-    int opcio; // l'opci� convertida en un n�mero
+    // iterar mentre l'opció no sigui una de les permeses
+    String cadOpcio; // l'opció, tal com la llegim
+    int opcio; // l'opció convertida en un número
     do {
-      System.out.print("opci�? ");
+      System.out.print("opció? ");
       cadOpcio = Teclat.llegirCadena();
       try {
         opcio = Integer.parseInt(cadOpcio);
@@ -116,15 +116,15 @@ public class PexProva {
     // demanar la paraula
     System.out.print("Paraula: ");
     paraula = Teclat.llegirCadena();
-    // demanar el sin�nim
+    // demanar el sinònim
     System.out.print("Sinonim: ");
     sinonim = Teclat.llegirCadena();
 
     // afegir i dir com ha anat
     if (elMeuDiccionari.afegir(paraula, sinonim))
-        System.out.println("  Sin�nim afegit");
+        System.out.println("  Sinònim afegit");
     else
-        System.out.println("  Sin�nim NO afegit. Possible repetici�");
+        System.out.println("  Sinònim NO afegit. Possible repetició");
 
 
     premerPerContinuar();
@@ -138,7 +138,7 @@ public class PexProva {
     // demanar la paraula
     System.out.print("Paraula: ");
     paraula = Teclat.llegirCadena();
-    // demanar tots els sin�nim
+    // demanar tots els sinònims
     System.out.print("Sinonims (separats per espai(s)): ");
     sinonims = Teclat.llegirCadena();
 
@@ -150,9 +150,9 @@ public class PexProva {
     
     // afegir i dir com ha anat
     if (elMeuDiccionari.afegir(paraula, cjtSinonims))
-        System.out.println("  Sin�nims afegit");
+        System.out.println("  Sinònims afegit");
     else
-        System.out.println("  Sin�nims NO afegits. Possible repetici�");
+        System.out.println("  Sinònims NO afegits. Possible repetició");
 
     premerPerContinuar();
   }
@@ -165,7 +165,7 @@ public class PexProva {
 
     if (paraules.length==0) {
       // una taula de mida zero indica que la paraula no es coneix
-      System.out.println("El diccionari �s buit");
+      System.out.println("El diccionari és buit");
     }
     else {
       // iterar sobre la taula i anar escribint les paraules
@@ -186,10 +186,10 @@ public class PexProva {
         while(resposta!='N' && resposta!='S');
 
         if (resposta=='S') {
-            System.out.print("nom arxiu que cont� el diccionari: ");
+            System.out.print("nom arxiu que conté el diccionari: ");
             filename = Teclat.llegirCadena();
 
-            // triar format de c�rrega
+            // triar format de càrrega
             switch(modeCarrega) {
                 case TEXT: carregarText (filename, dic); break;
                 case BIN_NUM: carregarBinari_num (filename, dic);break;
@@ -213,7 +213,7 @@ public class PexProva {
             System.out.print("nom de l'arxiu per desar diccionari: ");
             filename = Teclat.llegirCadena();
 
-           // triar format de descarrega
+           // triar format de descàrrega
             switch(modeDescarrega) {
                 case TEXT: descarregarText (filename, dic); break;
                 case BIN_NUM: descarregarBinari_num (filename, dic);break;
@@ -237,7 +237,7 @@ public class PexProva {
                 out.write(paraula); out.newLine();
                 // recurperar els seus sinonims
                 sinonims = dic.recuperar(paraula);
-                // escriure el n�mero de sin�nims i anar-los guardant
+                // escriure el número de sinònims i anar-los guardant
                 out.write(String.valueOf(sinonims.length)); out.newLine();
                 for (String sinonim : sinonims) {
                     out.write(sinonim); out.newLine();
@@ -312,7 +312,7 @@ public class PexProva {
                 out.writeUTF(paraula);
                 // recurperar els seus sinonims
                 sinonims = dic.recuperar(paraula);
-                // escriure el n�mero de sin�nims que hi ha
+                // escriure el número de sinònims que hi ha
                 out.writeInt(sinonims.length);
                 // anar escribint els sinonims
                 for (String sinonim : sinonims) {

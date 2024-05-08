@@ -8,9 +8,9 @@ import classes.Teclat.*;
 public class Comptar_LA {
 
     public static void main (String [] args) throws IOException {
-    // en aquest exercici no caldrà capturar excepcions perquè si aquestes
-    // es produissin deixariem que fossin propagades fins a la màquina
-    // virtual.
+    // En aquest exercici no caldrà capturar excepcions perquè
+    // si aquestes es produïssin deixaríem que fossin propagades
+    // fins a la màquina virtual.
 
        File file;
        String filename;
@@ -23,16 +23,15 @@ public class Comptar_LA {
        filename = Teclat.llegirCadena();
        filename = filename + ".txt";
 
-
        /* COMPLETAR */
 
        System.out.println("la cadena LA apareix " + aparicions + " vegades");
     }
 
     private static int processarLinia (String linia) {
-        // aquest procediment compta el n�mero de vegades que apareix 
-        // la cadena LA, en qualsevol de les seves variants, a la l�nia de
-        // text donada com a paràmetre
+        // Aquest procediment compta la quantitat de vegades que apareix
+        // la cadena LA, en qualsevol de les seves variants, a la línia de
+        // text donada com a paràmetre.
         int pos, resultat;
 
         linia = linia.toUpperCase();
@@ -41,8 +40,8 @@ public class Comptar_LA {
         pos = linia.indexOf("LA");
 
         /* COMPLETAR */
-        // us pot ser �til una iteraci� en qu� es fa �s del m�tode
-        // indexOf en la seva versi� de dos par�metres...
+        // us pot ser útil una iteració en què es fa és del mètode
+        // indexOf en la seva versió de dos paràmetres...
 
         return resultat;
     }
