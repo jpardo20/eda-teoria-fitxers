@@ -39,18 +39,14 @@ public class InfoLinies {
 			suma += mida;
 			System.out.format("Línia %d:" +
 					" %s mida => %.0f\n",
-					comptaLinies,
-					linia,
-					mida
+					comptaLinies,linia,mida
 					);
-
 			linia = entrada.readLine();
 		}
 
 		System.out.format("L'arxiu %s té %d línies\n",
 				arxiu.getName(),
 				comptaLinies);
-
 		if(comptaLinies==0) {
 			System.out.print("Amb zero línies no es pot calcular cap mitjana");
 		} else {
