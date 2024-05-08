@@ -26,7 +26,7 @@ public class Comptar_LA {
 
         try {
             entrada = new BufferedReader(new FileReader(filename));
-        } catch(IOException ex) {
+        } catch(Exception ex) {
             System.err.println("Problemes en la creació dels canals");
             ex.printStackTrace();
             System.exit(0);
@@ -35,7 +35,8 @@ public class Comptar_LA {
         try {
             linia = entrada.readLine();
             while(linia!=null) {
-                aparicions = processarLinia(linia);
+                aparicions += processarLinia(linia);
+                //aparicions = aparicions + processarLinia(linia);
                 linia = entrada.readLine();
             }
             entrada.close();
