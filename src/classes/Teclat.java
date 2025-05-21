@@ -2,7 +2,7 @@ package classes;
 import java.io.*;
 import java.security.cert.TrustAnchor;
 
-import static Keyboard.Keyboard.readChar;
+//import static Keyboard.Keyboard.readChar;
 
 // eda-06-presentacio-streams
 
