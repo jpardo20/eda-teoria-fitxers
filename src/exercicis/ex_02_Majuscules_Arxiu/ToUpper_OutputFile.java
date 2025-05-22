@@ -1,13 +1,12 @@
 package exercicis.ex_02_Majuscules_Arxiu;
 
 import java.io.*;
-
 import classes.Teclat;
-import classes.Teclat.*;
+
 
 public class    ToUpper_OutputFile {
 
-    public static void main (String [] args) {
+    public static void main (String [] args) throws IOException {
         String filename;
         File inputFile, outputFile; // un fitxer per l'entrada i un per la sortida
         BufferedReader entrada = null;
@@ -23,35 +22,33 @@ public class    ToUpper_OutputFile {
 
         /* COMPLETAR */
         try {
-        	entrada = new BufferedReader(new FileReader(inputFile));
-        	sortida = new BufferedWriter(new FileWriter(outputFile));
-        } catch(FileNotFoundException exFitNoTrobat) {
-            System.err.format("No s'ha trobat l'arxiu %s!",inputFile.getName());
-        	System.exit(0);
-        } catch(IOException ioEx) {
-            System.err.println("Problemes amb algun dels arxius!");
-            ioEx.printStackTrace();
-            System.exit(0);
+            entrada = new BufferedReader(new FileReader(inputFile));
+            sortida = new BufferedWriter(new FileWriter(outputFile));
+        } catch (FileNotFoundException ex2){
+            System.out.printf("No existeix l'arxiu!");
+            System.exit(1);
+        } catch (IOException e) {
+            System.out.printf("Problemes amb algun dels fitxers!");
+            System.exit(1);
         }
+
 
         // llegir en un i escriure en l'altre
         try {
            /* COMPLETAR */
-        	linia = entrada.readLine();
-        	while(linia != null) {
-        		sortida.write(linia.toUpperCase());
-        		sortida.newLine();
-        		linia = entrada.readLine();
-        	}
-        	entrada.close();
+            linia = entrada.readLine();
+            while (linia != null) {
+                sortida.write(linia.toUpperCase());
+                sortida.newLine(); // sortida.write("\n");
+                linia = entrada.readLine();
+            }
+            entrada.close();
         	sortida.close();
-        	
         }
         catch (IOException ex) {
            /* COMPLETAR */
-        	System.err.println("Problemes durant el tractament de l'arxiu");
-        	ex.printStackTrace();
-        	System.exit(0);
+            System.out.printf("Problemes amb el tractament del fitxer!");
+            System.exit(1);
         }
         System.out.println(">>>Arxiu processat. Resultat a " + outputFile.getName());
     }
