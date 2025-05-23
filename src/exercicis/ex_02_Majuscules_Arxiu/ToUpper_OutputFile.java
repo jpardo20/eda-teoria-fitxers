@@ -4,7 +4,7 @@ import java.io.*;
 import classes.Teclat;
 
 
-public class    ToUpper_OutputFile {
+public class ToUpper_OutputFile {
 
     public static void main (String [] args) throws IOException {
         String filename;
@@ -21,34 +21,16 @@ public class    ToUpper_OutputFile {
         outputFile = new File(filename+"_UPPER.txt");
 
         /* COMPLETAR */
-        try {
-            entrada = new BufferedReader(new FileReader(inputFile));
-            sortida = new BufferedWriter(new FileWriter(outputFile));
-        } catch (FileNotFoundException ex2){
-            System.out.printf("No existeix l'arxiu!");
-            System.exit(1);
-        } catch (IOException e) {
-            System.out.printf("Problemes amb algun dels fitxers!");
-            System.exit(1);
-        }
 
 
         // llegir en un i escriure en l'altre
         try {
            /* COMPLETAR */
-            linia = entrada.readLine();
-            while (linia != null) {
-                sortida.write(linia.toUpperCase());
-                sortida.newLine(); // sortida.write("\n");
-                linia = entrada.readLine();
-            }
-            entrada.close();
         	sortida.close();
         }
         catch (IOException ex) {
            /* COMPLETAR */
-            System.out.printf("Problemes amb el tractament del fitxer!");
-            System.exit(1);
+
         }
         System.out.println(">>>Arxiu processat. Resultat a " + outputFile.getName());
     }
